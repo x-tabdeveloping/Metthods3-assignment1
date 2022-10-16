@@ -3,3 +3,4 @@ blackjax
 jax[cpu]
 pandas
 numpy
+kaleido

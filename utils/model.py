@@ -66,11 +66,11 @@ def unpooled_model(data: pd.DataFrame) -> pm.Model:
         )
         # Hyperiors for the slope
         mu_s = pm.Normal(
-            "mu_slope", mu=0.2, sigma=0.1, dims=("diagnosis_levels")
+            "mu_slope", mu=0.2, sigma=0.05, dims=("diagnosis_levels")
         )
-        sigma_s = pm.HalfNormal("sigma_slope", 0.1, dims=("diagnosis_levels"))
+        sigma_s = pm.HalfNormal("sigma_slope", 0.02, dims=("diagnosis_levels"))
         # Prior of the error
-        error = pm.HalfNormal("error", 0.3)
+        error = pm.HalfNormal("error", 0.02)
         # Priors for the intercept drawn from the hyperior
         intercept = pm.Normal(
             "intercept",
