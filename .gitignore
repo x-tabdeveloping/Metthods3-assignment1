@@ -2,4 +2,5 @@
 *.ipynb_checkpoints/
 *.Rmd
 *.md
+models/
 !README.md

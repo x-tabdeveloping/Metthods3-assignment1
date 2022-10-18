@@ -1,3 +1,4 @@
+"""Utilities for visualizing models in the assignment"""
 from typing import Dict
 
 import arviz as az
@@ -32,9 +33,9 @@ def plot_each(plots: Dict[str, go.Figure]):
         plot.show()
 
 
-def save_each(plots: Dict[str, go.Figure], prefix: str):
+def save_each(plots: Dict[str, go.Figure], directory: str, prefix: str):
     for var, plot in plots.items():
-        plot.write_image(f"plots/{prefix}_{var}.png")
+        plot.write_image(f"plots/{directory}/{prefix}_{var}.png")
 
 
 def plot_prior_posterior_update(
